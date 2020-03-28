@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/joho/godotenv"
 	"log"
 	"net/http"
 	"net/http/httptest"
@@ -25,11 +24,6 @@ const tableCreationQuery = `CREATE TABLE IF NOT EXISTS  products
 `
 
 func TestMain(m *testing.M) {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
 	a.Initialize(
 		os.Getenv("APP_DB_USERNAME"),
 		os.Getenv("APP_DB_PASSWORD"),
