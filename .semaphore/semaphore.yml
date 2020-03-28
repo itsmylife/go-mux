@@ -69,5 +69,4 @@ blocks:
       jobs:
         - name: Build
           commands:
-            - go build -v -o go-mux-api
-            - artifact push project --force go-mux-api
+            - go test ./...
